@@ -1,5 +1,6 @@
 package com.prisma.prisma_talento.Services.Empleado;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class EmpleadoService implements IEmpleadoService {
 
     @Override
     public List<Empleado> obtenerEmpleados() {
-        return empleadoRepository.findAll().isEmpty() ? null : empleadoRepository.findAll();
+        return empleadoRepository.findAll().isEmpty() ? Collections.emptyList() : empleadoRepository.findAll();
     }
 
     @Override
